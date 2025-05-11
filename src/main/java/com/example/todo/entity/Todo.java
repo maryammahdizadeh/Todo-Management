@@ -18,8 +18,10 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title", nullable = false)
+    @Column(nullable = false)
     private String title;
+
+    @Column(nullable = false)
     private String description;
     private boolean completed;
 }
