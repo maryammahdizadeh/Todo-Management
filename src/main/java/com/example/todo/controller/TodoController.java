@@ -1,7 +1,10 @@
 package com.example.todo.controller;
 
+import com.example.todo.dto.TodoDto;
 import com.example.todo.service.TodoService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,4 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class TodoController {
 
     private TodoService todoService;
+
+    // Build Add Todo REST API
+
+    public ResponseEntity<TodoDto> addTodo(TodoDto todoDto) {
+
+        TodoDto savedTodoDto = todoService.addTodo(todoDto);
+
+        return new ResponseEntity<>(savedTodoDto, HttpStatus.CREATED);
+    }
 }
