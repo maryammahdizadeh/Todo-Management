@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>todo-managment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>todo-managment</name>
+	<name>todo-management</name>
 	<description>Demo project for Spring Boot Todo Management Project</description>
 	<url/>
 	<licenses>
@@ -49,7 +49,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<scope>annotationProcessor</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -68,6 +68,7 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+							<version>1.18.32</version>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
