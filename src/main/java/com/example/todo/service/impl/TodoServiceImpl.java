@@ -5,6 +5,7 @@ import com.example.todo.entity.Todo;
 import com.example.todo.repository.TodoRepository;
 import com.example.todo.service.TodoService;
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Service;
 public class TodoServiceImpl implements TodoService {
 
     private TodoRepository todoRepository;
+
+    private ModelMapper modelMapper;
 
     @Override
     public TodoDto addTodo(TodoDto todoDto) {
