@@ -34,6 +34,7 @@ public class TodoServiceImpl implements TodoService {
     public TodoDto getTodo(Long id) {
 
         Todo todo = todoRepository.findById(id).get();
-        return null;
+
+        return modelMapper.map(todo, TodoDto.class);
     }
 }
