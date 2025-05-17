@@ -20,10 +20,12 @@ public class TodoServiceImpl implements TodoService {
     public TodoDto addTodo(TodoDto todoDto) {
 
         // convert TodoDto into Todo Jpa entity
-        Todo todo = new Todo();
-        todo.setTitle(todoDto.getTitle());
-        todo.setDescription(todoDto.getDescription());
-        todo.setCompleted(todoDto.isCompleted());
+//        Todo todo = new Todo();
+//        todo.setTitle(todoDto.getTitle());
+//        todo.setDescription(todoDto.getDescription());
+//        todo.setCompleted(todoDto.isCompleted());
+
+        Todo todo = modelMapper.map(todoDto, Todo.class);
 
         // save Todo Jpa entity into database
         Todo savedTodo = todoRepository.save(todo);
