@@ -26,8 +26,8 @@ public class TodoController {
 
     // Build Get Todo REST API
     @GetMapping("{id}")
-    public ResponseEntity<TodoDto> getTodo(Long id) {
-        TodoDto todoDto = todoService.getTodo(id);
+    public ResponseEntity<TodoDto> getTodo(@PathVariable("id") Long todoId) {
+        TodoDto todoDto = todoService.getTodo(todoId);
         return new ResponseEntity<>(todoDto, HttpStatus.OK);
     }
 }
