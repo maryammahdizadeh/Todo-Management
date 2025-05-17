@@ -44,6 +44,8 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public List<TodoDto> getAllTodos() {
+
+        List<Todo> todos = todoRepository.findAll();
         return List.of();
     }
 }
