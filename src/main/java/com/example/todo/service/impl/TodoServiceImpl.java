@@ -31,11 +31,13 @@ public class TodoServiceImpl implements TodoService {
         Todo savedTodo = todoRepository.save(todo);
 
         // Convert saved Todo Jpa entity object into TodoDto object
-        TodoDto savedTodoDto = new TodoDto();
-        savedTodoDto.setId(savedTodo.getId());
-        savedTodoDto.setTitle(savedTodo.getTitle());
-        savedTodoDto.setDescription(savedTodo.getDescription());
-        savedTodoDto.setCompleted(savedTodo.isCompleted());
+//        TodoDto savedTodoDto = new TodoDto();
+//        savedTodoDto.setId(savedTodo.getId());
+//        savedTodoDto.setTitle(savedTodo.getTitle());
+//        savedTodoDto.setDescription(savedTodo.getDescription());
+//        savedTodoDto.setCompleted(savedTodo.isCompleted());
+
+        TodoDto savedTodoDto = modelMapper.map(savedTodo, TodoDto.class);
 
         return savedTodoDto;
     }
