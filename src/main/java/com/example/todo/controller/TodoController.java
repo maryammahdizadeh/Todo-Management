@@ -26,4 +26,10 @@ public class TodoController {
 
         return new ResponseEntity<>(savedTodoDto, HttpStatus.CREATED);
     }
+
+    // Build Get Todo REST API
+    public ResponseEntity<TodoDto> getTodo(Long id) {
+        TodoDto todoDto = todoService.getTodo(id);
+        return new ResponseEntity<>(todoDto, HttpStatus.OK);
+    }
 }
