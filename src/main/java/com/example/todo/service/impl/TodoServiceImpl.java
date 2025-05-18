@@ -51,4 +51,9 @@ public class TodoServiceImpl implements TodoService {
         return todos.stream().map((todo) -> modelMapper.map(todo, TodoDto.class))
                 .collect(Collectors.toUnmodifiableList());
     }
+
+    @Override
+    public TodoDto updateTodo(TodoDto todoDto, Long id) {
+        return null;
+    }
 }
