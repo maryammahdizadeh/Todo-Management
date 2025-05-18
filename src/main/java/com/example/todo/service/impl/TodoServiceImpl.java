@@ -74,4 +74,9 @@ public class TodoServiceImpl implements TodoService {
 
         todoRepository.delete(todo);
     }
+
+    @Override
+    public TodoDto completeTodo(Long id) {
+        return null;
+    }
 }
