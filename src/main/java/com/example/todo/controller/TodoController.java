@@ -55,4 +55,10 @@ public class TodoController {
         return ResponseEntity.ok("Todo deleted successfully");
     }
 
+    // Build Complete Todo REST API
+    public ResponseEntity<TodoDto> completeTodo(Long todoId) {
+        TodoDto updatedTodo = todoService.completeTodo(todoId);
+        return ResponseEntity.ok(updatedTodo);
+    }
+
 }
