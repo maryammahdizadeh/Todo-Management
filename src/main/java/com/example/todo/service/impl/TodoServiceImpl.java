@@ -80,6 +80,8 @@ public class TodoServiceImpl implements TodoService {
 
         Todo todo = todoRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Todo not found with id: " + id));
+
+        todo.setCompleted(Boolean.TRUE);
         return null;
     }
 }
