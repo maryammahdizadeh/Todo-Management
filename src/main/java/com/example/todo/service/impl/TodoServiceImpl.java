@@ -60,6 +60,8 @@ public class TodoServiceImpl implements TodoService {
         todo.setTitle(todoDto.getTitle());
         todo.setDescription(todoDto.getDescription());
         todo.setCompleted(todoDto.isCompleted());
+
+        Todo updatedTodo = todoRepository.save(todo);
         return null;
     }
 }
