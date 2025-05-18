@@ -82,6 +82,8 @@ public class TodoServiceImpl implements TodoService {
                 .orElseThrow(() -> new ResourceNotFoundException("Todo not found with id: " + id));
 
         todo.setCompleted(Boolean.TRUE);
+
+        Todo updatedTodo = todoRepository.save(todo);
         return null;
     }
 }
