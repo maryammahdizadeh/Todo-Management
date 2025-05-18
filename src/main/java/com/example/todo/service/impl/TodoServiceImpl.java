@@ -85,6 +85,6 @@ public class TodoServiceImpl implements TodoService {
 
         Todo updatedTodo = todoRepository.save(todo);
 
-        return modelMapper.map(updatedTodo, TodoDto.class );
+        return modelMapper.map(updatedTodo, TodoDto.class);
     }
 }
