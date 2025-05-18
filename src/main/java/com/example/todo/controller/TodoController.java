@@ -33,11 +33,18 @@ public class TodoController {
         return new ResponseEntity<>(todoDto, HttpStatus.OK);
     }
 
-    // Build All Todos REST API
+    // Build Get All Todos REST API
     @GetMapping
     public ResponseEntity<List<TodoDto>> getAllTodos() {
         List<TodoDto> todos = todoService.getAllTodos();
 //        return new ResponseEntity<>(todos, HttpStatus.OK);
         return ResponseEntity.ok(todos);
+    }
+
+    // Build Update Todo REST API
+    public ResponseEntity<TodoDto> updateTodo(TodoDto todoDto, Long todoId ) {
+        TodoDto updatedTodo = todoService.updateTodo(todoDto, todoId);
+        return ResponseEntity.ok(updatedTodo);
+
     }
 }
