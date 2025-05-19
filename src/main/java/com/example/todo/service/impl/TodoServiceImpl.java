@@ -90,6 +90,10 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public TodoDto inCompleteTodo(Long id) {
+
+        Todo todo = todoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Todo not found with id: " + id));
+
         return null;
     }
 }
