@@ -62,4 +62,11 @@ public class TodoController {
         return ResponseEntity.ok(updatedTodo);
     }
 
+    // Build In Complete Todo REST API
+    public ResponseEntity<TodoDto> inCompleteTodo(Long todoId) {
+        TodoDto updatedTodo = todoService.inCompleteTodo(todoId);
+        return ResponseEntity.ok(updatedTodo);
+    }
+
+
 }
